@@ -14,12 +14,13 @@ TEMPLATES = {
     "glm": {
         "base_url": "https://open.bigmodel.cn/api/anthropic",
         "models": {
-            "default": "glm-5.3",
-            "sonnet": "glm-5.3",
-            "opus": "glm-5.3",
-            "haiku": "glm-5.3-flash",
-            "subagent": "glm-5.3-flash",
+            "default": "glm-5.3[1m]",
+            "sonnet": "glm-5.3[1m]",
+            "opus": "glm-5.3[1m]",
+            "haiku": "glm-5.3-flash[1m]",
+            "subagent": "glm-5.3-flash[1m]",
         },
+        "extra_env": {"CLAUDE_CODE_AUTO_COMPACT_WINDOW": "1000000"},
     },
     "kimi": {
         "base_url": "https://api.moonshot.cn/anthropic",
