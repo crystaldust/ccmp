@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+# Development launcher: run ccmp from a source checkout without installing.
+DIR="$(cd "$(dirname "$0")/.." && pwd)"
+if [ -x "$DIR/.venv/bin/python" ]; then
+  PY="$DIR/.venv/bin/python"
+else
+  PY=python3
+fi
+PYTHONPATH="$DIR${PYTHONPATH:+:$PYTHONPATH}" exec "$PY" -m ccmp "$@"

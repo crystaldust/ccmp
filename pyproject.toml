@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ccmp"
+version = "0.1.0"
+description = "Switch Claude Code model providers from the command line, with API keys stored in the macOS Keychain."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+dependencies = ["json5"]
+authors = [{ name = "ccmp contributors" }]
+keywords = ["claude-code", "claude", "cli", "keychain", "provider", "llm"]
+classifiers = [
+    "Environment :: Console",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS :: MacOS X",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Utilities",
+]
+
+[project.scripts]
+ccmp = "ccmp.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["ccmp"]
